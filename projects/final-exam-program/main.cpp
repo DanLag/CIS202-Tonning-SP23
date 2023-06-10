@@ -33,7 +33,6 @@ vector<Mountain> m;
 
   Mountain Shortest_Mountain = minElevation(m);
 
-      cout << endl <<"Name of the Shortest Mountain : "<<Shortest_Mountain.getName();
-
-      cout << endl <<"It's Elevation : "<<Shortest_Mountain.getElevation() << endl;
+      cout << endl << "Name of the Shortest Mountain : " << Shortest_Mountain.getName();
+      cout << endl << "It's Elevation : " << Shortest_Mountain.getElevation() << endl;
 }

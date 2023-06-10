@@ -1,10 +1,10 @@
 #ifndef mountain_H
-#define mountain_H
 
 #include<iostream>
 #include<vector>
 #include<string>
-#include <iomanip>
+#include<iomanip>
+#include<limits>
 using namespace std;
 
 class Mountain
@@ -53,20 +53,19 @@ return elevation;
 return meter;
 }
 };
-Mountain minElevation(vector<Mountain> m)
+Mountain minElevation(vector<Mountain>& m)
  {
-   double minimum_elevation;
+ double minElevation = numeric_limits<double>::infinity();
+      Mountain temp;
 
-Mountain t;
-
-    for(int i=0;i<m.size();i++)
-  {
-    if(m[i].getElevation() < minimum_elevation)
-    {
-      minimum_elevation=m[i].getElevation();
-      t=m[i];
-    }
-  }
-return t;
+       for(int i = 0; i<m.size(); i++)
+            {
+      if(m.at(i).getElevation() < minElevation)
+             {
+       minElevation = m.at(i).getElevation();
+       temp=m.at(i);
+             }
+            }
+   return temp;
 }
 #endif
